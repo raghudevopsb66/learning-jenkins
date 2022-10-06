@@ -61,15 +61,25 @@
 pipeline {
   agent any
 
+  parameters {
+    choice(name: 'DEPLOY_TO', choices: ['', 'DEV', 'PROD'], description: 'Pick ENv')
+  }
+
   stages {
 
-    stage('One') {
+    stage('DEV') {
+      when {
+        environment name: 'DEPLOY_TO', value: 'DEV'
+      }
       steps {
         echo 'One'
       }
     }
 
-    stage('Two') {
+    stage('PROD') {
+      when {
+        environment name: 'DEPLOY_TO', value: 'PROD'
+      }
       steps {
         echo 'Two'
       }
