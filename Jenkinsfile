@@ -102,7 +102,10 @@ pipeline {
 
     stage('DEV') {
       when {
-        return DEBUG_BUILD
+        expression {
+          return DEBUG_BUILD
+        }
+
       }
       steps {
         echo 'One'
