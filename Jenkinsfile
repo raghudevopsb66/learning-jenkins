@@ -103,7 +103,7 @@ pipeline {
     stage('DEV') {
       when {
         expression {
-          return DEPLOY
+          return params.DEPLOY
         }
 
       }
