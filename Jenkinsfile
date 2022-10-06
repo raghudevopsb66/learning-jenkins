@@ -5,6 +5,7 @@ pipeline {
 
   environment {
     SAMPLE_URL = "google.com"
+    SSH = credentials(SSH)
   }
 
   stages {
@@ -12,6 +13,7 @@ pipeline {
       steps {
         echo 'Hello World'
         echo "URL = ${SAMPLE_URL}"
+        echo "${SSH}"
       }
     }
   }
