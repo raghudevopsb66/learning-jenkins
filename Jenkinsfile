@@ -3,10 +3,15 @@ pipeline {
     node { label 'workstation' }
   }
 
+  environment {
+    SAMPLE_URL = "google.com"
+  }
+
   stages {
     stage('Hello') {
       steps {
         echo 'Hello World'
+        echo "URL = ${SAMPLE_URL}"
       }
     }
   }
