@@ -102,7 +102,7 @@ pipeline {
 
     stage('DEV') {
       when {
-        DEPLOY
+        return DEBUG_BUILD
       }
       steps {
         echo 'One'
