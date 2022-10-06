@@ -3,6 +3,8 @@ pipeline {
     node { label 'workstation' }
   }
 
+  options { disableConcurrentBuilds() }
+
   environment {
     SAMPLE_URL = "google.com"
     SSH = credentials('SSH')
