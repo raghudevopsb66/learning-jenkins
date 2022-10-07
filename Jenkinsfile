@@ -146,20 +146,18 @@ pipeline {
           }
         }
       }
-
-      stage('Two') {
-        steps {
-          echo 'two'
-        }
-      }
-      stage('Three') {
-        steps {
-          echo 'three'
-        }
-      }
-
     }
 
+    stage('Two') {
+      steps {
+        echo 'two'
+      }
+    }
+    stage('Three') {
+      steps {
+        echo 'three'
+      }
+    }
 
 
   }
