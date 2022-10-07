@@ -121,10 +121,6 @@
 pipeline {
   agent any
 
-  parameters {
-    booleanParam(name: 'DEPLOY', defaultValue: true, description: 'DEPLOY ?')
-  }
-
   stages {
 
     stage('Parallel Stages') {
